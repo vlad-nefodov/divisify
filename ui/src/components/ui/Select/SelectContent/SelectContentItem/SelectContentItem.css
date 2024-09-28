@@ -1,0 +1,19 @@
+.select-content__item {
+  cursor: pointer;
+  padding: .6em 1em;
+  transition: color .10s ease-in-out, background-color .10s ease-in-out;
+  color: #646464;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+
+  &:hover {
+    background-color: #F3F3F3;
+    color: #202020;
+  }
+
+  &:active {
+    background-color: #E4E4E4;
+    color: #202020;
+  }
+}

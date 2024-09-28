@@ -1,0 +1,4 @@
+.select-trigger__icon {
+  color: #838383;
+  transition: transform .15s ease-in-out;
+}

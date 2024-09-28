@@ -1,0 +1,23 @@
+.task-board-body-col__header {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.task-board-body-col-header__panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: #D9D9D9 solid;
+  border-width: .14em 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: .6em 0;
+}
+
+.task-board-body-col-header-panel__section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}

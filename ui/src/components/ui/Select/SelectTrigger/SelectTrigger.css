@@ -1,0 +1,23 @@
+.select__trigger {
+  display: flex;
+  gap: .5em;
+  font-size: .9rem;
+  font-weight: 500;
+  padding: .6em 1em;
+  border-radius: .4em;
+  background-color: #E8E8E8;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background-color .15s, box-shadow .1s ease-in-out;
+
+  &:hover {
+    background-color: #E0E0E0;
+  }
+
+  &:active {
+    background-color: #D9D9D9;
+  }
+}

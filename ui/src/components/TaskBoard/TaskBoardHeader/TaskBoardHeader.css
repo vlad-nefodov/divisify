@@ -1,0 +1,21 @@
+.task-board__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.task-board-header__title {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #2A2A2A;
+}
+
+.task-board-header__section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

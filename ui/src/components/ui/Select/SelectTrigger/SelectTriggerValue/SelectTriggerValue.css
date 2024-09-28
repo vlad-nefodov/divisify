@@ -1,0 +1,9 @@
+.select-trigger__value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.select-trigger__value--placeholder {
+  color: #8D8D8D;
+}

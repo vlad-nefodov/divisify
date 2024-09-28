@@ -1,0 +1,7 @@
+.task-board-body__col {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  flex: 0 1 20rem;
+  gap: .6rem;
+}
