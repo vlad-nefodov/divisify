@@ -1,16 +1,16 @@
 export type EntityStatus = 'init' | 'loading' | 'succeeded' | 'failed';
 
-export interface IEntityState {
+export interface EntityState {
   status: EntityStatus;
 }
 
-export interface ITaskList {
+export interface TaskList {
   id: string;
   name: string;
   tasksIds: string[];
 }
 
-export interface ITask extends IEntityState {
+export interface Task extends EntityState {
   id: string;
   taskListId: string;
   name: string;

@@ -1,8 +1,8 @@
+import { Dependencies } from './types';
 import { TaskListRepository } from '../../api/repositories/TaskListRepository';
 import { TaskRepository } from '../../api/repositories/TaskRepository';
-import { IDependencies } from './types';
 
-const dependencies: IDependencies = {
+const dependencies: Dependencies = {
   taskListRepository: new TaskListRepository(),
   taskRepository: new TaskRepository()
 };

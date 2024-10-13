@@ -1,8 +1,8 @@
 import { AxiosResponse } from 'axios';
+import { Entity } from '../../entities';
 import api from '../../api';
-import { IEntity } from '../../entities';
 
-abstract class BaseRepository<T extends IEntity> {
+abstract class BaseRepository<T extends Entity> {
   protected abstract _collectionName: string;
 
   public async getAll(): Promise<T[]> {

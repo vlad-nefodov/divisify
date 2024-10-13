@@ -3,10 +3,10 @@ import './TaskBoardBody.css';
 import { ComponentPropsWithoutRef, FC } from 'react';
 
 import TaskBoardBodyColumn from './TaskBoardBodyColumn/TaskBoardBodyColumn';
-import { ITaskList } from '../../../services/state/slices/types';
+import { TaskList } from '../../../services/state/slices/types';
 
 export interface TaskBoardBodyProps extends ComponentPropsWithoutRef<'div'> {
-  taskLists: ITaskList[];
+  taskLists: TaskList[];
 }
 
 const TaskBoardBody: FC<TaskBoardBodyProps> = (props) => {

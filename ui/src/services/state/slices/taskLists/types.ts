@@ -1,17 +1,17 @@
-import { ITaskList, ITask, IEntityState } from '../types';
+import { EntityState, Task, TaskList } from '../types';
 
-export interface ITaskListsState extends IEntityState {}
+export interface TaskListsState extends EntityState {}
 
-export interface IFetchTaskListsResult {
-  taskLists: ITaskList[];
-  tasks: ITask[];
+export interface FetchTaskListsResult {
+  taskLists: TaskList[];
+  tasks: Task[];
 }
 
-export interface IDeleteTaskListByIdArgs {
+export interface DeleteTaskListByIdArgs {
   id: string;
 }
 
-export interface IDeleteTaskListByIdResult {
+export interface DeleteTaskListByIdResult {
   deletedTaskListId: string;
   tasksIds: string[];
 }

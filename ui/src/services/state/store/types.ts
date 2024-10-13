@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { ITaskListRepository } from '../../api/repositories/TaskListRepository';
-import { ITaskRepository } from '../../api/repositories/TaskRepository';
+
+import { TaskListRepository } from '../../api/repositories/TaskListRepository';
+import { TaskRepository } from '../../api/repositories/TaskRepository';
 import { store } from './store';
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -9,11 +10,11 @@ export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
 export const useAppSelector = useSelector.withTypes<RootState>();
 
-export interface IDependencies {
-  taskListRepository: ITaskListRepository;
-  taskRepository: ITaskRepository;
+export interface Dependencies {
+  taskListRepository: TaskListRepository;
+  taskRepository: TaskRepository;
 }
-export interface IThunkDependencies {
-  extra: IDependencies;
+export interface ThunkDependencies {
+  extra: Dependencies;
   state: RootState;
 }

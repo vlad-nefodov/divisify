@@ -1,11 +1,6 @@
-import { ITaskList } from '../entities';
+import { TaskList } from '../entities';
 import BaseRepository from './base/BaseRepository';
 
-export interface ITaskListRepository extends BaseRepository<ITaskList> {}
-
-export class TaskListRepository
-  extends BaseRepository<ITaskList>
-  implements ITaskListRepository
-{
+export class TaskListRepository extends BaseRepository<TaskList> {
   protected override _collectionName = 'task-lists';
 }

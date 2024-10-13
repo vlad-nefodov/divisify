@@ -1,10 +1,11 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
-import { ITask } from '../types';
 import { deleteTaskById, moveTaskToTaskList } from './thunks';
 import { deleteTaskListById, fetchTaskLists } from '../taskLists/thunks';
-import { RootState } from '../../store/types';
 
-const tasksAdapter = createEntityAdapter<ITask>();
+import { RootState } from '../../store/types';
+import { Task } from '../types';
+
+const tasksAdapter = createEntityAdapter<Task>();
 const initialState = tasksAdapter.getInitialState();
 
 const tasksSlice = createSlice({

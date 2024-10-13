@@ -1,7 +1,8 @@
 import { AxiosInstance, AxiosRequestConfig } from 'axios';
-import MockAdapter from 'axios-mock-adapter';
-import { IEntity } from '../entities';
 import { taskListsMockData, tasksMockData } from './data';
+
+import { Entity } from '../entities';
+import MockAdapter from 'axios-mock-adapter';
 
 export interface MockAdapterOptions {
   delayResponse?: number;
@@ -16,7 +17,7 @@ class ApiMockAdapter extends MockAdapter {
     super(axiosInstance, options);
   }
 
-  public onCollectionEndpoints<T extends IEntity>(
+  public onCollectionEndpoints<T extends Entity>(
     collectionName: string,
     initialData: T[],
     afterUpdateCallback?: (prevVal: T, newVal: T) => void

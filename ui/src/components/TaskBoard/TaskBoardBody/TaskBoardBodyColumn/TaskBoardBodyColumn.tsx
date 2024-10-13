@@ -4,12 +4,12 @@ import { ComponentPropsWithoutRef, FC } from 'react';
 
 import TaskBoardBodyColumnBody from './TaskBoardBodyColumnBody/TaskBoardBodyColumnBody';
 import TaskBoardBodyColumnHeader from './TaskBoardBodyColumnHeader/TaskBoardBodyColumnHeader';
-import { ITaskList } from '../../../../services/state/slices/types';
+import { TaskList } from '../../../../services/state/slices/types';
 
 export interface TaskBoardBodyColumnProps
   extends ComponentPropsWithoutRef<'div'> {
-  taskList: ITaskList;
-  taskLists: ITaskList[];
+  taskList: TaskList;
+  taskLists: TaskList[];
 }
 
 const TaskBoardBodyColumn: FC<TaskBoardBodyColumnProps> = (props) => {

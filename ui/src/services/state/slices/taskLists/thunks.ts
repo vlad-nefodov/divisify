@@ -1,25 +1,26 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { IThunkDependencies } from '../../store/types';
 import {
-  IDeleteTaskListByIdArgs,
-  IDeleteTaskListByIdResult,
-  IFetchTaskListsResult
+  DeleteTaskListByIdArgs,
+  DeleteTaskListByIdResult,
+  FetchTaskListsResult
 } from './types';
-import { ITask, ITaskList } from '../types';
+import { Task, TaskList } from '../types';
+
+import { ThunkDependencies } from '../../store/types';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const fetchTaskLists = createAsyncThunk<
-  IFetchTaskListsResult,
+  FetchTaskListsResult,
   void,
-  IThunkDependencies
+  ThunkDependencies
 >('taskLists/fetchTaskLists', async (_, { extra }) => {
   const { taskListRepository } = extra;
   const taskListsEntities = await taskListRepository.getAll();
 
   // Normalize data
-  const tasks: ITask[] = taskListsEntities.flatMap((tl) =>
+  const tasks: Task[] = taskListsEntities.flatMap((tl) =>
     tl.tasks.map((t) => ({ ...t, status: 'init' }))
   );
-  const taskLists: ITaskList[] = taskListsEntities.map(({ tasks, ...tl }) => ({
+  const taskLists: TaskList[] = taskListsEntities.map(({ tasks, ...tl }) => ({
     ...tl,
     tasksIds: tasks.map((t) => t.id)
   }));
@@ -31,9 +32,9 @@ const fetchTaskLists = createAsyncThunk<
 });
 
 const deleteTaskListById = createAsyncThunk<
-  IDeleteTaskListByIdResult,
-  IDeleteTaskListByIdArgs,
-  IThunkDependencies
+  DeleteTaskListByIdResult,
+  DeleteTaskListByIdArgs,
+  ThunkDependencies
 >('taskLists/deleteTaskListById', async (args, { extra }) => {
   const { taskListRepository } = extra;
   const deletedTaskListEntity = await taskListRepository.deleteById(args.id);

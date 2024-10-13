@@ -1,21 +1,21 @@
 import './TaskCard.css';
 
 import { ComponentPropsWithoutRef, FC } from 'react';
-import TaskCardBody from './TaskCardBody/TaskCardBody';
-
-import TaskCardHeader from './TaskCardHeader/TaskCardHeader';
-import classNames from '../../utils/classNames';
-import { ITaskList } from '../../services/state/slices/types';
-import {
-  useAppDispatch,
-  useAppSelector
-} from '../../services/state/store/types';
-import { tasksSelectors } from '../../services/state/slices/tasks/tasksSlice';
 import {
   deleteTaskById,
   moveTaskToTaskList
 } from '../../services/state/slices/tasks/thunks';
+import {
+  useAppDispatch,
+  useAppSelector
+} from '../../services/state/store/types';
+
 import Loader from '../ui/Loader/Loader';
+import TaskCardBody from './TaskCardBody/TaskCardBody';
+import TaskCardHeader from './TaskCardHeader/TaskCardHeader';
+import { TaskList } from '../../services/state/slices/types';
+import classNames from '../../utils/classNames';
+import { tasksSelectors } from '../../services/state/slices/tasks/tasksSlice';
 
 export interface Task {
   id: string;
@@ -26,7 +26,7 @@ export interface Task {
 }
 export interface TaskCardProps extends ComponentPropsWithoutRef<'div'> {
   taskId: string;
-  lists: ITaskList[];
+  lists: TaskList[];
   onEdit: (taskId: string) => void;
 }
 

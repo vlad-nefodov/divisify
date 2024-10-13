@@ -1,8 +1,8 @@
-export interface IEntity {
+export interface Entity {
   id: string;
 }
 
-export interface ITask extends IEntity {
+export interface Task extends Entity {
   taskListId: string;
   name: string;
   description: string;
@@ -10,7 +10,7 @@ export interface ITask extends IEntity {
   priority: 'low' | 'medium' | 'high';
 }
 
-export interface ITaskList extends IEntity {
+export interface TaskList extends Entity {
   name: string;
-  tasks: ITask[];
+  tasks: Task[];
 }

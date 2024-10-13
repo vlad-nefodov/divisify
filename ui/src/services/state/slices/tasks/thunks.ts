@@ -1,16 +1,17 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { IThunkDependencies } from '../../store/types';
 import {
-  IDeleteTaskByIdArgs,
-  IDeleteTaskByIdResult,
-  IMoveTaskToTaskListArgs,
-  IMoveTaskToTaskListResult
+  DeleteTaskByIdArgs,
+  DeleteTaskByIdResult,
+  MoveTaskToTaskListArgs,
+  MoveTaskToTaskListResult
 } from './types';
 
+import { ThunkDependencies } from '../../store/types';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
 const deleteTaskById = createAsyncThunk<
-  IDeleteTaskByIdResult,
-  IDeleteTaskByIdArgs,
-  IThunkDependencies
+  DeleteTaskByIdResult,
+  DeleteTaskByIdArgs,
+  ThunkDependencies
 >('tasks/deleteTaskById', async (args, { extra }) => {
   const { taskRepository } = extra;
   const deletedListEntity = await taskRepository.deleteById(args.id);
@@ -22,9 +23,9 @@ const deleteTaskById = createAsyncThunk<
 });
 
 const moveTaskToTaskList = createAsyncThunk<
-  IMoveTaskToTaskListResult,
-  IMoveTaskToTaskListArgs,
-  IThunkDependencies
+  MoveTaskToTaskListResult,
+  MoveTaskToTaskListArgs,
+  ThunkDependencies
 >('tasks/moveTaskToTaskList', async (args, { extra }) => {
   const { taskRepository } = extra;
   const prevTaskEntity = await taskRepository.update(args.taskId, {

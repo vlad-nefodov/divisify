@@ -1,6 +1,6 @@
-import { ITask, ITaskList } from '../entities';
+import { Task, TaskList } from '../entities';
 
-export const taskListsMockData: ITaskList[] = [
+export const taskListsMockData: TaskList[] = [
   {
     id: '1',
     name: 'Task List 1',
@@ -75,7 +75,7 @@ export const taskListsMockData: ITaskList[] = [
   }
 ];
 
-export const tasksMockData: ITask[] = [
+export const tasksMockData: Task[] = [
   {
     id: '1',
     taskListId: '1',

@@ -1,18 +1,18 @@
-export interface IDeleteTaskByIdArgs {
+export interface DeleteTaskByIdArgs {
   id: string;
 }
 
-export interface IDeleteTaskByIdResult {
+export interface DeleteTaskByIdResult {
   deletedTaskId: string;
   taskListId: string;
 }
 
-export interface IMoveTaskToTaskListArgs {
+export interface MoveTaskToTaskListArgs {
   taskId: string;
   listId: string;
 }
 
-export interface IMoveTaskToTaskListResult {
+export interface MoveTaskToTaskListResult {
   movedTaskId: string;
   fromTaskListId: string;
   toTaskListId: string;
