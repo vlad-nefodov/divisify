@@ -1,17 +1,18 @@
-import './Button.css';
-
 import { ComponentPropsWithoutRef, FC } from 'react';
 
-import classNames from '../../../utils/classNames';
+import classNames from 'classnames/bind';
+import styles from './Button.module.scss';
 
 export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   variant?: 'primary' | 'outline-secondary' | 'dashed-secondary';
   size?: 'lg';
 }
 
+const cx = classNames.bind(styles);
+
 const Button: FC<ButtonProps> = (props) => {
   const { variant, size, className, children, ...rest } = props;
-  const styleNames = classNames(
+  const styleNames = cx(
     'btn',
     {
       [`btn--${variant}`]: variant,

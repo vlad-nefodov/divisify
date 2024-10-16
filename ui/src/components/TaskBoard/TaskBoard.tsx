@@ -1,13 +1,13 @@
-import './TaskBoard.css';
-
 import { FC, useEffect } from 'react';
-import TaskBoardBody from './TaskBoardBody/TaskBoardBody';
-import TaskBoardHeader from './TaskBoardHeader/TaskBoardHeader';
 import {
   useAppDispatch,
   useAppSelector
 } from '../../services/state/store/types';
+
+import Body from './Body/Body';
+import Header from './Header/Header';
 import { fetchTaskLists } from '../../services/state/slices/taskLists/thunks';
+import styles from './TaskBoard.module.scss';
 import { taskListsSelectors } from '../../services/state/slices/taskLists/taskListsSlice';
 
 const TaskBoard: FC = () => {
@@ -22,9 +22,9 @@ const TaskBoard: FC = () => {
   return taskListsStatus === 'loading' ? (
     'Loading...'
   ) : (
-    <div className='task-board'>
-      <TaskBoardHeader title='My Task Board' />
-      <TaskBoardBody taskLists={taskLists} />
+    <div className={styles['task-board']}>
+      <Header title='My Task Board' />
+      <Body taskLists={taskLists} />
     </div>
   );
 };

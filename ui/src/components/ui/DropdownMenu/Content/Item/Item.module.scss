@@ -1,0 +1,43 @@
+.item {
+  cursor: pointer;
+  padding: 0.6em 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  color: #646464;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+
+  /* Pseudo-classes */
+  &:hover {
+    background-color: #f3f3f3;
+    color: #202020;
+  }
+  &:active {
+    background-color: #e4e4e4;
+    color: #202020;
+  }
+  &:disabled {
+    color: #646464;
+    background-color: transparent;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  /* Variant */
+  &--danger {
+    color: #eb8e90;
+
+    /* Pseudo-classes */
+    &:hover {
+      background-color: #f3f3f3;
+      color: #dc3e42;
+    }
+    &:active {
+      background-color: #e4e4e4;
+      color: #dc3e42;
+    }
+  }
+}

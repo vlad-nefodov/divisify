@@ -1,9 +1,9 @@
-import './Loader.css';
+import styles from './Loader.module.scss';
 
 const Loader = () => {
   return (
-    <div className='loader-wrapper'>
-      <span className='loader'></span>
+    <div className={styles.wrapper}>
+      <span className={styles.loader}></span>
     </div>
   );
 };

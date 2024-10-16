@@ -1,0 +1,19 @@
+.item {
+  cursor: pointer;
+  padding: 0.6em 1em;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  color: #646464;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+
+  /* Pseudo-classes */
+  &:hover {
+    background-color: #f3f3f3;
+    color: #202020;
+  }
+  &:active {
+    background-color: #e4e4e4;
+    color: #202020;
+  }
+}

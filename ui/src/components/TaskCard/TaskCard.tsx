@@ -1,5 +1,3 @@
-import './TaskCard.css';
-
 import { ComponentPropsWithoutRef, FC } from 'react';
 import {
   deleteTaskById,
@@ -10,11 +8,11 @@ import {
   useAppSelector
 } from '../../services/state/store/types';
 
+import Body from './Body/Body';
+import Header from './Header/Header';
 import Loader from '../ui/Loader/Loader';
-import TaskCardBody from './TaskCardBody/TaskCardBody';
-import TaskCardHeader from './TaskCardHeader/TaskCardHeader';
 import { TaskList } from '../../services/state/slices/types';
-import classNames from '../../utils/classNames';
+import styles from './TaskCard.module.scss';
 import { tasksSelectors } from '../../services/state/slices/tasks/tasksSlice';
 
 export interface Task {
@@ -31,8 +29,7 @@ export interface TaskCardProps extends ComponentPropsWithoutRef<'div'> {
 }
 
 const TaskCard: FC<TaskCardProps> = (props) => {
-  const { taskId, lists, onEdit, className, ...rest } = props;
-  const styleNames = classNames('task-card', className);
+  const { taskId, lists, onEdit, ...rest } = props;
 
   const dispatch = useAppDispatch();
 
@@ -48,16 +45,12 @@ const TaskCard: FC<TaskCardProps> = (props) => {
     dispatch(moveTaskToTaskList({ taskId: task.id, listId }));
 
   return (
-    <div className={styleNames} {...rest}>
-      <TaskCardHeader
-        {...task}
-        onEdit={onEditHandler}
-        onDelete={onDeleteHandler}
-      />
+    <div className={styles['task-card']} {...rest}>
+      <Header {...task} onEdit={onEditHandler} onDelete={onDeleteHandler} />
       {task.status === 'loading' ? (
         <Loader />
       ) : (
-        <TaskCardBody
+        <Body
           {...task}
           priority={task.priority}
           lists={lists}

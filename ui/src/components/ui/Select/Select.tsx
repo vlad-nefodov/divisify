@@ -1,5 +1,3 @@
-import './Select.css';
-
 import { FC, ReactNode, useEffect, useRef, useState } from 'react';
 import {
   SelectExtensions,
@@ -8,11 +6,14 @@ import {
   SelectValue
 } from './Select.types';
 
-import SelectContent from './SelectContent/SelectContent';
+import Content from './Content/Content';
 import { SelectContext } from './SelectContext';
-import SelectTrigger from './SelectTrigger/SelectTrigger';
-import classNames from '../../../utils/classNames';
+import Trigger from './Trigger/Trigger';
+import classNames from 'classnames/bind';
+import styles from './Select.module.scss';
 import { useOnClickOutside } from 'usehooks-ts';
+
+const cx = classNames.bind(styles);
 
 const Select: FC<SelectProps> & SelectExtensions = (props) => {
   const {
@@ -86,16 +87,8 @@ const Select: FC<SelectProps> & SelectExtensions = (props) => {
     }
   });
 
-  const styleNames = classNames(
-    'select',
-    {
-      'select--open': state.isOpen
-    },
-    className
-  );
-
   return (
-    <button className={styleNames} ref={ref} {...rest}>
+    <button className={cx('select', className)} ref={ref} {...rest}>
       <SelectContext.Provider
         value={{
           ...state,
@@ -110,6 +103,6 @@ const Select: FC<SelectProps> & SelectExtensions = (props) => {
   );
 };
 
-Select.Trigger = SelectTrigger;
-Select.Content = SelectContent;
+Select.Trigger = Trigger;
+Select.Content = Content;
 export default Select;

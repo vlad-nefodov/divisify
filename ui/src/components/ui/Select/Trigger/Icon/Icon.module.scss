@@ -1,0 +1,8 @@
+.icon {
+  color: #838383;
+  transition: transform 0.15s ease-in-out;
+
+  &--active {
+    transform: rotate(180deg);
+  }
+}

@@ -1,0 +1,18 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3em 0.6em;
+  border-radius: 0.8em;
+  font-size: 0.8rem;
+  background-color: #e8e8ec;
+  color: #8b8d98;
+
+  &--decorated::before {
+    content: '';
+    border-radius: 50%;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #80838d;
+    margin-right: 0.4em;
+  }
+}

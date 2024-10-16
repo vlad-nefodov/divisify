@@ -1,0 +1,27 @@
+.trigger {
+  display: flex;
+  gap: 0.5em;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.6em 1em;
+  border-radius: 0.4em;
+  background-color: #e8e8e8;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background-color 0.15s, box-shadow 0.1s ease-in-out;
+
+  /* Pseudo-classes */
+  &:hover {
+    background-color: #e0e0e0;
+  }
+  &:active {
+    background-color: #d9d9d9;
+  }
+
+  &--active {
+    outline: 0.05em #bbbbbb solid;
+  }
+}

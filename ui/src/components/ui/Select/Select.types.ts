@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
 
-import SelectContent from './SelectContent/SelectContent';
-import SelectTrigger from './SelectTrigger/SelectTrigger';
+import Content from './Content/Content';
+import Trigger from './Trigger/Trigger';
 
 export type SelectValue = string | number | undefined;
 
@@ -12,8 +12,8 @@ export interface SelectState {
 }
 
 export interface SelectExtensions {
-  Trigger: typeof SelectTrigger;
-  Content: typeof SelectContent;
+  Trigger: typeof Trigger;
+  Content: typeof Content;
 }
 
 export interface SelectProps extends ComponentPropsWithoutRef<'button'> {

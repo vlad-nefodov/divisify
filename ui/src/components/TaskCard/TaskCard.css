@@ -1,8 +1,0 @@
-.task-card {
-  padding: 1rem;
-  border: .12rem #D9D9D9 solid;
-  border-radius: .4rem;
-  display: flex;
-  flex-direction: column;
-  gap: .6rem;
-}

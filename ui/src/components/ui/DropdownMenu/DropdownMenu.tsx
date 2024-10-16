@@ -1,5 +1,3 @@
-import './DropdownMenu.css';
-
 import {
   ComponentPropsWithoutRef,
   FC,
@@ -8,20 +6,23 @@ import {
   useState
 } from 'react';
 
-import DropdownMenuContent from './DropdownMenuContent/DropdownMenuContent';
+import Content from './Content/Content';
 import { DropdownMenuContext } from './DropdownMenuContext';
-import DropdownMenuTrigger from './DropdownMenuTrigger/DropdownMenuTrigger';
-import classNames from '../../../utils/classNames';
+import Trigger from './Trigger/Trigger';
+import classNames from 'classnames/bind';
+import styles from './DropdownMenu.module.scss';
 import { useOnClickOutside } from 'usehooks-ts';
 
 export interface DropdownMenuExtensions {
-  Trigger: typeof DropdownMenuTrigger;
-  Content: typeof DropdownMenuContent;
+  Trigger: typeof Trigger;
+  Content: typeof Content;
 }
 export interface DropdownMenuProps extends ComponentPropsWithoutRef<'div'> {
   isOpen?: boolean;
   onOpenChange?: (isOpen: boolean) => void;
 }
+
+const cx = classNames.bind(styles);
 
 const DropdownMenu: FC<DropdownMenuProps> & DropdownMenuExtensions = (
   props
@@ -59,16 +60,8 @@ const DropdownMenu: FC<DropdownMenuProps> & DropdownMenuExtensions = (
     }
   });
 
-  const styleNames = classNames(
-    'dropdown-menu',
-    {
-      'dropdown-menu--open': isOpen
-    },
-    className
-  );
-
   return (
-    <div className={styleNames} ref={ref} {...rest}>
+    <div className={cx('dropdown-menu', className)} ref={ref} {...rest}>
       <DropdownMenuContext.Provider
         value={{
           isOpen,
@@ -81,6 +74,6 @@ const DropdownMenu: FC<DropdownMenuProps> & DropdownMenuExtensions = (
   );
 };
 
-DropdownMenu.Trigger = DropdownMenuTrigger;
-DropdownMenu.Content = DropdownMenuContent;
+DropdownMenu.Trigger = Trigger;
+DropdownMenu.Content = Content;
 export default DropdownMenu;
