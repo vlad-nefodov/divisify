@@ -1,35 +1,38 @@
+@use '../tokens' as *;
+
 .icon-btn {
-  color: #2a2a2a;
-  background-color: transparent;
-  border: 0.05em transparent solid;
-  border-radius: 50%;
+  gap: $icon-btn-gap;
+  color: $icon-btn-color;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5em;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.2em 0.6em;
-  transition: background-color 0.15s ease-in-out;
-  -webkit-user-select: none;
+  font-size: $icon-btn-font-size;
+  font-weight: $icon-btn-font-weight;
   user-select: none;
+  border-radius: $icon-btn-border-radius;
+  align-items: center;
+  display: inline-flex;
+  padding: $icon-btn-padding-y $icon-btn-padding-x;
+  justify-content: center;
+  -webkit-user-select: none;
+  background-color: $icon-btn-background-color;
+  border: $icon-btn-border-width $icon-btn-border-color solid;
+  transition: background-color $icon-btn-transition-background-color-duration
+    ease-in-out;
 
   /* Pseudo-classes */
   &:hover {
-    background-color: #f9f9f9;
+    background-color: $icon-btn-hover-background-color;
   }
   &:active {
-    background-color: #f0f0f0;
+    background-color: $icon-btn-active-background-color;
   }
   &:disabled {
-    background-color: #ffffff;
+    opacity: $icon-btn-disabled-opacity;
     cursor: not-allowed;
-    opacity: 0.5;
+    background-color: $icon-btn-disabled-background-color;
   }
 
   /* Size */
   &--sm {
-    font-size: 0.8rem;
+    font-size: $icon-btn--font-size;
   }
 }

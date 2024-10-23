@@ -1,6 +1,9 @@
+@use '../../../tokens' as *;
+
 .icon {
-  color: #838383;
-  transition: transform 0.15s ease-in-out;
+  color: $select-trigger-icon-color;
+  transition: transform $select-trigger-icon-transition-transform-duration
+    ease-in-out;
 
   &--active {
     transform: rotate(180deg);

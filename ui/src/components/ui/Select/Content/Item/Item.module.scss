@@ -1,19 +1,23 @@
+@use '../../../tokens' as *;
+
 .item {
   cursor: pointer;
-  padding: 0.6em 1em;
-  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
-  color: #646464;
   overflow: hidden;
   text-wrap: nowrap;
   text-overflow: ellipsis;
+  color: $select-content-item-color;
+  padding: $select-content-item-padding-y $select-content-item-padding-x;
+  transition: color $select-content-item-transition-color-duration ease-in-out,
+    background-color $select-content-item-transition-background-color-duration
+      ease-in-out;
 
   /* Pseudo-classes */
   &:hover {
-    background-color: #f3f3f3;
-    color: #202020;
+    color: $select-content-item-hover-color;
+    background-color: $select-content-item-hover-background-color;
   }
   &:active {
-    background-color: #e4e4e4;
-    color: #202020;
+    color: $select-content-item-active-color;
+    background-color: $select-content-item-active-background-color;
   }
 }

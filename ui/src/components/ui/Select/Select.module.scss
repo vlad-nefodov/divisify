@@ -1,6 +1,9 @@
+@use '../tokens' as *;
+
 .select {
-  position: relative;
   border: none;
-  background-color: transparent;
+  position: relative;
   display: inline-block;
+  font-size: $select-font-size;
+  background-color: transparent;
 }

@@ -1,18 +1,20 @@
+@use '../tokens' as *;
+
 .badge {
-  display: inline-flex;
   align-items: center;
-  padding: 0.3em 0.6em;
-  border-radius: 0.8em;
-  font-size: 0.8rem;
-  background-color: #e8e8ec;
-  color: #8b8d98;
+  color: $badge-color;
+  display: inline-flex;
+  padding: $badge-padding-y $badge-padding-x;
+  font-size: $badge-font-size;
+  border-radius: $badge-border-radius;
+  background-color: $badge-background-color;
 
   &--decorated::before {
     content: '';
-    border-radius: 50%;
-    width: 0.5em;
-    height: 0.5em;
-    background-color: #80838d;
-    margin-right: 0.4em;
+    width: $badge--decorated-size;
+    height: $badge--decorated-size;
+    margin-right: $badge--decorated-gap;
+    border-radius: $badge--decorated-border-radius;
+    background-color: $badge--decorated-background-color;
   }
 }

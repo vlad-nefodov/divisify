@@ -10,5 +10,10 @@ export default defineConfig({
         api: 'modern'
       }
     }
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
   }
 });

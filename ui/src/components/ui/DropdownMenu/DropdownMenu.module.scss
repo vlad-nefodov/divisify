@@ -1,4 +1,7 @@
+@use '../tokens' as *;
+
 .dropdown-menu {
   position: relative;
   display: inline-block;
+  font-size: $dropdown-menu-font-size;
 }

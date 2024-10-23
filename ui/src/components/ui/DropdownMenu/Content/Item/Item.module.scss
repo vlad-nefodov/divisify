@@ -1,43 +1,49 @@
+@use '../../../tokens' as *;
+
 .item {
-  cursor: pointer;
-  padding: 0.6em 1em;
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
-  color: #646464;
-  border: none;
   width: 100%;
-  background-color: transparent;
+  border: none;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  gap: $dropdown-menu-content-item-gap;
+  color: $dropdown-menu-content-item-color;
+  background-color: $dropdown-menu-content-item-background-color;
+  padding: $dropdown-menu-content-item-padding-y
+    $dropdown-menu-content-item-padding-x;
+  transition: background-color
+      $dropdown-menu-content-item-transition-background-color-duration
+      ease-in-out,
+    color $dropdown-menu-content-item-transition-color-duration ease-in-out;
 
   /* Pseudo-classes */
   &:hover {
-    background-color: #f3f3f3;
-    color: #202020;
+    color: $dropdown-menu-content-item-hover-color;
+    background-color: $dropdown-menu-content-item-hover-background-color;
   }
   &:active {
-    background-color: #e4e4e4;
-    color: #202020;
+    color: $dropdown-menu-content-item-active-color;
+    background-color: $dropdown-menu-content-item-active-background-color;
   }
   &:disabled {
-    color: #646464;
-    background-color: transparent;
     cursor: not-allowed;
-    opacity: 0.5;
+    color: $dropdown-menu-content-item-disabled-color;
+    opacity: $dropdown-menu-content-item-disabled-opacity;
+    background-color: $dropdown-menu-content-item-disabled-background-color;
   }
 
   /* Variant */
   &--danger {
-    color: #eb8e90;
+    color: $dropdown-menu-content-item--danger-color;
 
     /* Pseudo-classes */
     &:hover {
-      background-color: #f3f3f3;
-      color: #dc3e42;
+      color: $dropdown-menu-content-item--danger-hover-color;
+      background-color: $dropdown-menu-content-item--danger-hover-background-color;
     }
     &:active {
-      background-color: #e4e4e4;
-      color: #dc3e42;
+      color: $dropdown-menu-content-item--danger-active-color;
+      background-color: $dropdown-menu-content-item--danger-active-background-color;
     }
   }
 }

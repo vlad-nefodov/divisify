@@ -1,25 +1,26 @@
+@use '../../tokens' as *;
+
 .content {
-  position: absolute;
-  border: 0.12em #d9d9d9 solid;
-  border-radius: 0.4em;
-  background-color: #ffffff;
-  top: 110%;
-  padding: 0.4em 0;
-  font-size: 0.9rem;
+  opacity: 0;
   width: 100%;
   text-align: left;
-  z-index: 1;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.15s, visibility 0.15s ease-in-out;
-  -webkit-user-select: none;
-  user-select: none;
-  max-height: 14em;
-  overflow-y: scroll;
   overflow-y: auto;
+  user-select: none;
+  position: absolute;
+  visibility: hidden;
+  -webkit-user-select: none;
+  z-index: $select-content-z-index;
+  max-height: $select-content-max-height;
+  top: calc(100% + $select-content-offset-y);
+  border-radius: $select-content-border-radius;
+  background-color: $select-content-background-color;
+  padding: $select-content-padding-y $select-content-padding-x;
+  border: $select-content-border-width $select-content-border-color solid;
+  transition: opacity $select-content-transition-fade-duration ease-in-out,
+    visibility $select-content-transition-fade-duration ease-in-out;
 
   &--visible {
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
   }
 }

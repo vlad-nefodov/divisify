@@ -1,27 +1,31 @@
+@use '../../tokens' as *;
+
 .trigger {
+  gap: $select-trigger-gap;
   display: flex;
-  gap: 0.5em;
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 0.6em 1em;
-  border-radius: 0.4em;
-  background-color: #e8e8e8;
-  align-items: center;
-  justify-content: space-between;
   cursor: pointer;
+  font-weight: $select-trigger-font-weight;
   user-select: none;
+  padding: $select-trigger-padding-y $select-trigger-padding-x;
+  align-items: center;
+  border-radius: $select-trigger-border-radius;
+  background-color: $select-trigger-background-color;
   -webkit-user-select: none;
-  transition: background-color 0.15s, box-shadow 0.1s ease-in-out;
+  outline: $select-trigger-outline-width $select-trigger-outline-color solid;
+  justify-content: space-between;
+  transition: background-color
+      $select-trigger-transition-background-color-duration ease-in-out,
+    outline-color $select-trigger-transition-outline-color-duration ease-in-out;
 
   /* Pseudo-classes */
   &:hover {
-    background-color: #e0e0e0;
+    background-color: $select-trigger-hover-background-color;
   }
   &:active {
-    background-color: #d9d9d9;
+    background-color: $select-trigger-active-background-color;
   }
 
   &--active {
-    outline: 0.05em #bbbbbb solid;
+    outline-color: $select-trigger--active-outline-color;
   }
 }
