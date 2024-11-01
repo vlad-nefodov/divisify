@@ -10,7 +10,7 @@ import { useMergeProps } from '../../../utils/useMergeProps';
 import { useMergeRefs } from '../../../utils/useMergeRefs';
 
 export interface SlotProps extends HTMLAttributes<HTMLElement> {
-  children?: ReactNode;
+  children: ReactNode;
 }
 
 const Slot = forwardRef<HTMLElement, SlotProps>((props, forwardedRef) => {
