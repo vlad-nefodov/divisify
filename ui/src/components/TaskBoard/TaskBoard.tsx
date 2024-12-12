@@ -1,14 +1,11 @@
 import { FC, useEffect } from 'react';
-import {
-  useAppDispatch,
-  useAppSelector
-} from '../../services/state/store/types';
+import { useAppDispatch, useAppSelector } from '@/services/state/store/types';
 
 import Body from './Body/Body';
 import Header from './Header/Header';
-import { fetchTaskLists } from '../../services/state/slices/taskLists/thunks';
+import { fetchTaskLists } from '@/services/state/slices/taskLists/thunks';
 import styles from './TaskBoard.module.scss';
-import { taskListsSelectors } from '../../services/state/slices/taskLists/taskListsSlice';
+import { taskListsSelectors } from '@/services/state/slices/taskLists/taskListsSlice';
 
 const TaskBoard: FC = () => {
   const dispatch = useAppDispatch();

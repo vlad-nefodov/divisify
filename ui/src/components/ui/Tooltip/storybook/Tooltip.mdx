@@ -1,0 +1,54 @@
+import {
+  Meta,
+  Title,
+  Description,
+  Source,
+  ArgTypes,
+  Canvas,
+  Stories
+} from '@storybook/blocks';
+import * as TooltipStories from './Tooltip.stories.tsx';
+
+<Meta of={TooltipStories} title='Components/Tooltip' />
+
+<Title />
+<Description />
+
+<Canvas />
+
+### Anatomy
+
+{/* prettier-ignore-start */}
+
+<Source
+  dark
+  code={`
+import { Tooltip } from "@/components/ui/Tooltip";
+
+<Tooltip>
+  <Tooltip.Trigger>
+    Children
+  </Tooltip.Trigger>
+  <Tooltip.Portal>
+    <Tooltip.Content>
+      Children
+    </Tooltip.Content>
+  </Tooltip.Portal>
+</Tooltip>
+`} />
+
+{/* prettier-ignore-end */}
+
+### Tooltip Props
+
+<ArgTypes exclude={['asChild', 'id', 'root']} sort='alpha' />
+
+### Trigger Props
+
+<ArgTypes include={['asChild']} sort='alpha' />
+
+### Portal Props
+
+<ArgTypes include={['id', 'root']} sort='alpha' />
+
+<Stories includePrimary={false} />

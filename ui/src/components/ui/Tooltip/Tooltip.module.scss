@@ -1,0 +1,10 @@
+@use '@/components/ui/styles' as *;
+
+:export {
+  tooltip-content-arrow-fill: $tooltip-content-arrow-fill;
+  tooltip-content-arrow-width: $tooltip-content-arrow-width;
+  tooltip-content-arrow-height: $tooltip-content-arrow-height;
+  tooltip-content-arrow-stroke: $tooltip-content-arrow-stroke;
+  tooltip-content-arrow-tip-radius: $tooltip-content-arrow-tip-radius;
+  tooltip-content-arrow-stroke-width: $tooltip-content-arrow-stroke-width;
+}

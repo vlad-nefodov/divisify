@@ -2,18 +2,15 @@ import { ComponentPropsWithoutRef, FC } from 'react';
 import {
   deleteTaskById,
   moveTaskToTaskList
-} from '../../services/state/slices/tasks/thunks';
-import {
-  useAppDispatch,
-  useAppSelector
-} from '../../services/state/store/types';
+} from '@/services/state/slices/tasks/thunks';
+import { useAppDispatch, useAppSelector } from '@/services/state/store/types';
 
 import Body from './Body/Body';
 import Header from './Header/Header';
-import Loader from '../ui/Loader/Loader';
-import { TaskList } from '../../services/state/slices/types';
+import { Loader } from '@/components/ui/Loader/Loader';
+import { TaskList } from '@/services/state/slices/types';
 import styles from './TaskCard.module.scss';
-import { tasksSelectors } from '../../services/state/slices/tasks/tasksSlice';
+import { tasksSelectors } from '@/services/state/slices/tasks/tasksSlice';
 
 export interface Task {
   id: string;

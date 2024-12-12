@@ -1,0 +1,287 @@
+/* Badge */
+$badge-padding-x: 0.6em;
+$badge-font-size: 0.8rem;
+$badge-border-radius: 0.8em;
+$badge-padding-y: calc($badge-padding-x / 2);
+
+// decorated
+$badge--decorated-gap: 0.4em;
+$badge--decorated-size: 0.5em;
+$badge--decorated-border-radius: 50%;
+
+// primary
+$badge--primary-color: #ffffff;
+$badge--primary-background-color: #7b2cbf;
+
+$badge--primary--decorated-background-color: #dcb7f2;
+
+// secondary
+$badge--secondary-color: #ffffff;
+$badge--secondary-background-color: #4b4b4b;
+
+$badge--secondary--decorated-background-color: #a0a0a0;
+
+// danger
+$badge--danger-color: #ffffff;
+$badge--danger-background-color: #dc3e42;
+
+$badge--danger--decorated-background-color: #f28b8d;
+
+/* Button */
+$btn-gap: 0.4em;
+$btn-padding-x: 1em;
+$btn-font-weight: 400;
+$btn-border-radius: 0.4em;
+$btn-border-width: 0.15em;
+$btn-padding-y: calc($btn-padding-x / 1.5);
+$btn-transition-background-color-duration: 0.15s;
+
+// primary
+$btn--primary-color: #ffffff;
+$btn--primary-border-color: #7b2cbf;
+$btn--primary-background-color: #7b2cbf;
+
+$btn--primary--disabled-color: #b3a3d6;
+$btn--primary-hover-background-color: #6924a5;
+$btn--primary-active-background-color: #571c8b;
+$btn--primary--disabled-background-color: #dbc4eb;
+$btn--primary-hover-color: #ffffff;
+
+// primary-outline
+$btn--primary-outline-color: #7b2cbf;
+$btn--primary-outline-border-color: #7b2cbf;
+$btn--primary-outline-background-color: transparent;
+
+$btn--primary-outline-hover-color: #7b2cbf;
+$btn--primary-outline--disabled-color: #b3a3d6;
+$btn--primary-outline--disabled-background-color: transparent;
+$btn--primary-outline-hover-background-color: rgba(123, 44, 191, 0.1);
+$btn--primary-outline-active-background-color: rgba(123, 44, 191, 0.2);
+
+// primary-dashed
+$btn--primary-dashed-color: #7b2cbf;
+$btn--primary-dashed-border-color: #7b2cbf;
+$btn--primary-dashed-background-color: transparent;
+
+$btn--primary-dashed-hover-color: #7b2cbf;
+$btn--primary-dashed--disabled-color: #b3a3d6;
+$btn--primary-dashed--disabled-background-color: transparent;
+$btn--primary-dashed-hover-background-color: rgba(123, 44, 191, 0.1);
+$btn--primary-dashed-active-background-color: rgba(123, 44, 191, 0.2);
+
+// secondary
+$btn--secondary-color: #ffffff;
+$btn--secondary-border-color: #4b4b4b;
+$btn--secondary-background-color: #4b4b4b;
+
+$btn--secondary-hover-color: #ffffff;
+$btn--secondary--disabled-color: #a0a0a0;
+$btn--secondary-hover-background-color: #6e6e6e;
+$btn--secondary-active-background-color: #595959;
+$btn--secondary--disabled-background-color: #d3d3d3;
+
+// secondary-outline
+$btn--secondary-outline-color: #4b4b4b;
+$btn--secondary-outline-border-color: #4b4b4b;
+$btn--secondary-outline-background-color: transparent;
+
+$btn--secondary-outline-hover-color: #4b4b4b;
+$btn--secondary-outline--disabled-color: #a0a0a0;
+$btn--secondary-outline--disabled-background-color: transparent;
+$btn--secondary-outline-hover-background-color: rgba(75, 75, 75, 0.1);
+$btn--secondary-outline-active-background-color: rgba(75, 75, 75, 0.2);
+
+// secondary-dashed
+$btn--secondary-dashed-color: #4b4b4b;
+$btn--secondary-dashed-border-color: #4b4b4b;
+$btn--secondary-dashed-background-color: transparent;
+
+$btn--secondary-dashed-hover-color: #4b4b4b;
+$btn--secondary-dashed--disabled-color: #a0a0a0;
+$btn--secondary-dashed--disabled-background-color: transparent;
+$btn--secondary-dashed-hover-background-color: rgba(75, 75, 75, 0.1);
+$btn--secondary-dashed-active-background-color: rgba(75, 75, 75, 0.2);
+
+// danger
+$btn--danger-color: #ffffff;
+$btn--danger-border-color: #dc3e42;
+$btn--danger-background-color: #dc3e42;
+
+$btn--danger-hover-color: #ffffff;
+$btn--danger--disabled-color: #e59a9c;
+$btn--danger-hover-background-color: #c13236;
+$btn--danger-active-background-color: #a6262b;
+$btn--danger--disabled-background-color: #f5b3b4;
+
+// danger-outline
+$btn--danger-outline-color: #dc3e42;
+$btn--danger-outline-border-color: #dc3e42;
+$btn--danger-outline-background-color: transparent;
+
+$btn--danger-outline-hover-color: #dc3e42;
+$btn--danger-outline--disabled-color: #e59a9c;
+$btn--danger-outline--disabled-background-color: transparent;
+$btn--danger-outline-hover-background-color: rgba(220, 62, 66, 0.1);
+$btn--danger-outline-active-background-color: rgba(220, 62, 66, 0.2);
+
+// danger-dashed
+$btn--danger-dashed-color: #dc3e42;
+$btn--danger-dashed-border-color: #dc3e42;
+$btn--danger-dashed-background-color: transparent;
+
+$btn--danger-dashed-hover-color: #dc3e42;
+$btn--danger-dashed--disabled-color: #e59a9c;
+$btn--danger-dashed--disabled-background-color: transparent;
+$btn--danger-dashed-hover-background-color: rgba(220, 62, 66, 0.1);
+$btn--danger-dashed-active-background-color: rgba(220, 62, 66, 0.2);
+
+// ghost
+$btn--ghost-color: #4b4b4b;
+$btn--ghost-border-color: transparent;
+$btn--ghost-background-color: transparent;
+
+$btn--ghost-hover-color: #4b4b4b;
+$btn--ghost--disabled-color: #a0a0a0;
+$btn--ghost--disabled-background-color: transparent;
+$btn--ghost-hover-background-color: rgba(75, 75, 75, 0.1);
+$btn--ghost-active-background-color: rgba(75, 75, 75, 0.2);
+
+// link
+$btn--link-color: #7b2cbf;
+$btn--link-border-color: transparent;
+$btn--link-background-color: transparent;
+
+$btn--link-hover-color: #6924a5;
+$btn--link--disabled-color: #b3a3d6;
+$btn--link-hover-background-color: transparent;
+$btn--link-hover-text-underline-offset: 0.15em;
+$btn--link-active-background-color: transparent;
+$btn--link--disabled-background-color: transparent;
+$btn--link-hover-text-decoration-thickness: 0.1em;
+
+// sm
+$btn--sm-font-size: 0.8rem;
+
+// md
+$btn--md-font-size: 0.9rem;
+
+// lg
+$btn--lg-font-size: 1rem;
+
+// icon
+$btn--icon-padding: $btn-padding-y;
+
+/* Select */
+$select-font-size: 0.9rem;
+
+// SelectContent
+$select-content-z-index: 1;
+$select-content-padding-x: 0;
+$select-content-offset-y: 0.3em;
+$select-content-padding-y: 0.4em;
+$select-content-max-height: 14em;
+$select-content-border-radius: 0.4em;
+$select-content-border-width: 0.12em;
+$select-content-border-color: #d9d9d9;
+$select-content-background-color: #ffffff;
+$select-content-transition-fade-duration: 0.15s;
+
+// SelectContentItem
+$select-content-item-color: #646464;
+$select-content-item-padding-x: 1em;
+$select-content-item-padding-y: 0.6em;
+$select-content-item-transition-color-duration: 0.1s;
+$select-content-item-transition-background-color-duration: 0.1s;
+
+$select-content-item-hover-color: #202020;
+$select-content-item-hover-background-color: #f3f3f3;
+
+$select-content-item-active-color: #202020;
+$select-content-item-active-background-color: #e4e4e4;
+
+// SelectTrigger
+$select-trigger-gap: 0.5em;
+$select-trigger-padding-x: 1em;
+$select-trigger-font-weight: 500;
+$select-trigger-padding-y: 0.6em;
+$select-trigger-border-radius: 0.4em;
+$select-trigger-outline-width: 0.05em;
+$select-trigger-background-color: #e8e8e8;
+$select-trigger-outline-color: transparent;
+$select-trigger-transition-outline-color-duration: 0.15s;
+$select-trigger-transition-background-color-duration: 0.15s;
+
+$select-trigger-hover-background-color: #e0e0e0;
+$select-trigger-active-background-color: #d9d9d9;
+
+$select-trigger--active-outline-color: #bbbbbb;
+
+// SelectTriggerIcon
+$select-trigger-icon-color: #838383;
+$select-trigger-icon-transition-transform-duration: 0.15s;
+
+// SelectTriggerValue
+$select-trigger-value--placeholder-color: #8d8d8d;
+
+/* DropdownMenu */
+$dropdown-menu-font-size: 0.9rem;
+
+/* DropdownMenuContent */
+$dropdown-menu-content-z-index: 1;
+$dropdown-menu-content-padding-x: 0;
+$dropdown-menu-content-offset-y: 0.3em;
+$dropdown-menu-content-padding-y: 0.4em;
+$dropdown-menu-content-border-radius: 0.4em;
+$dropdown-menu-content-border-width: 0.12em;
+$dropdown-menu-content-border-color: #d9d9d9;
+$dropdown-menu-content-background-color: #ffffff;
+$dropdown-menu-content-transition-fade-duration: 0.15s;
+
+/* DropdownMenuContentItem */
+$dropdown-menu-content-item-gap: 0.5em;
+$dropdown-menu-content-item-color: #646464;
+$dropdown-menu-content-item-padding-x: 1em;
+$dropdown-menu-content-item-padding-y: 0.6em;
+$dropdown-menu-content-item-background-color: transparent;
+$dropdown-menu-content-item-transition-color-duration: 0.1s;
+$dropdown-menu-content-item-transition-background-color-duration: 0.1s;
+
+$dropdown-menu-content-item-hover-color: #202020;
+$dropdown-menu-content-item-hover-background-color: #f3f3f3;
+
+$dropdown-menu-content-item-active-color: #202020;
+$dropdown-menu-content-item-active-background-color: #e4e4e4;
+
+$dropdown-menu-content-item-disabled-opacity: 0.5;
+$dropdown-menu-content-item-disabled-color: #646464;
+$dropdown-menu-content-item-disabled-background-color: transparent;
+
+// danger
+$dropdown-menu-content-item--danger-color: #eb8e90;
+
+$dropdown-menu-content-item--danger-hover-color: #dc3e42;
+$dropdown-menu-content-item--danger-hover-background-color: #f3f3f3;
+
+$dropdown-menu-content-item--danger-active-color: #dc3e42;
+$dropdown-menu-content-item--danger-active-background-color: #e4e4e4;
+
+// TooltipContent
+$tooltip-content-color: inherit;
+$tooltip-content-padding-x: 1.2em;
+$tooltip-content-font-weight: 400;
+$tooltip-content-font-size: 0.7rem;
+$tooltip-content-border-radius: 4px;
+$tooltip-content-border-width: 0.12em;
+$tooltip-content-border-color: #d9d9d9;
+$tooltip-content-background-color: #ffffff;
+$tooltip-content-padding-y: calc($tooltip-content-padding-x / 2);
+
+// TooltipContentArrow
+// The numbers should be defined in pixels only.
+// See in docs: https://floating-ui.com/docs/FloatingArrow
+$tooltip-content-arrow-width: 8;
+$tooltip-content-arrow-height: 4;
+$tooltip-content-arrow-tip-radius: 2;
+$tooltip-content-arrow-fill: #ffffff;
+$tooltip-content-arrow-stroke: #d9d9d9;
+$tooltip-content-arrow-stroke-width: 1;

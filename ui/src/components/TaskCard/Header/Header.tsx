@@ -1,13 +1,8 @@
 import { ComponentPropsWithoutRef, FC } from 'react';
-import {
-  faEllipsisVertical,
-  faPenToSquare,
-  faTrashCan
-} from '@fortawesome/free-solid-svg-icons';
+import { EllipsisVertical, Pencil, Trash } from 'lucide-react';
 
-import DropdownMenu from '../../ui/DropdownMenu/DropdownMenu';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import IconButton from '../../ui/IconButton/IconButton';
+import { Button } from '@/components/ui/Button';
+import DropdownMenu from '@/components/ui/DropdownMenu/DropdownMenu';
 import styles from './Header.module.scss';
 
 export interface HeaderProps extends ComponentPropsWithoutRef<'div'> {
@@ -24,17 +19,17 @@ const Header: FC<HeaderProps> = (props) => {
       <div>{name}</div>
       <DropdownMenu>
         <DropdownMenu.Trigger>
-          <IconButton>
-            <FontAwesomeIcon icon={faEllipsisVertical} />
-          </IconButton>
+          <Button variant='ghost' size='lg' isIcon>
+            <EllipsisVertical />
+          </Button>
         </DropdownMenu.Trigger>
         <DropdownMenu.Content>
           <DropdownMenu.Content.Item disabled onClick={onEdit}>
-            <FontAwesomeIcon icon={faPenToSquare} />
+            <Pencil />
             Edit
           </DropdownMenu.Content.Item>
           <DropdownMenu.Content.Item variant='danger' onClick={onDelete}>
-            <FontAwesomeIcon icon={faTrashCan} />
+            <Trash />
             Delete
           </DropdownMenu.Content.Item>
         </DropdownMenu.Content>

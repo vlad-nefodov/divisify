@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, FC } from 'react';
 
 import Body from './Body/Body';
 import Header from './Header/Header';
-import { TaskList } from '../../../../services/state/slices/types';
+import { TaskList } from '@/services/state/slices/types';
 import styles from './Col.module.scss';
 
 export interface ColProps extends ComponentPropsWithoutRef<'div'> {

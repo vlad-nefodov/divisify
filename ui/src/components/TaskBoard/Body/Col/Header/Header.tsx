@@ -1,18 +1,11 @@
 import { ComponentPropsWithoutRef, FC } from 'react';
-import {
-  faEllipsisVertical,
-  faPenToSquare,
-  faPlus,
-  faTrashCan
-} from '@fortawesome/free-solid-svg-icons';
+import { EllipsisVertical, Pencil, Plus, Trash } from 'lucide-react';
 
-import Button from '../../../../ui/Button/Button';
-import DropdownMenu from '../../../../ui/DropdownMenu/DropdownMenu';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import IconButton from '../../../../ui/IconButton/IconButton';
-import { deleteTaskListById } from '../../../../../services/state/slices/taskLists/thunks';
+import { Button } from '@/components/ui/Button';
+import DropdownMenu from '@/components/ui/DropdownMenu/DropdownMenu';
+import { deleteTaskListById } from '@/services/state/slices/taskLists/thunks';
 import styles from './Header.module.scss';
-import { useAppDispatch } from '../../../../../services/state/store/types';
+import { useAppDispatch } from '@/services/state/store/types';
 
 export interface HeaderProps extends ComponentPropsWithoutRef<'div'> {
   title: string;
@@ -32,32 +25,32 @@ const Header: FC<HeaderProps> = ({ title, count, listId }) => {
           <div>{count}</div>
           <DropdownMenu>
             <DropdownMenu.Trigger>
-              <IconButton>
-                <FontAwesomeIcon icon={faEllipsisVertical} />
-              </IconButton>
+              <Button variant='ghost' size='md' isIcon>
+                <EllipsisVertical />
+              </Button>
             </DropdownMenu.Trigger>
             <DropdownMenu.Content>
               <DropdownMenu.Content.Item disabled>
-                <FontAwesomeIcon icon={faPenToSquare} />
+                <Pencil />
                 Edit
               </DropdownMenu.Content.Item>
               <DropdownMenu.Content.Item disabled>
-                <FontAwesomeIcon icon={faPlus} />
+                <Plus />
                 Add new card
               </DropdownMenu.Content.Item>
               <DropdownMenu.Content.Item
                 variant='danger'
                 onClick={onDeleteHandler}
               >
-                <FontAwesomeIcon icon={faTrashCan} />
+                <Trash />
                 Delete
               </DropdownMenu.Content.Item>
             </DropdownMenu.Content>
           </DropdownMenu>
         </div>
       </div>
-      <Button disabled variant='dashed-secondary' size='lg'>
-        <FontAwesomeIcon icon={faPlus} />
+      <Button disabled variant='secondary-dashed' size='lg'>
+        <Plus />
         Add new card
       </Button>
     </div>

@@ -1,20 +1,46 @@
-@use '../tokens' as *;
+@use '@/components/ui/styles' as *;
 
 .badge {
   align-items: center;
-  color: $badge-color;
   display: inline-flex;
   padding: $badge-padding-y $badge-padding-x;
   font-size: $badge-font-size;
   border-radius: $badge-border-radius;
-  background-color: $badge-background-color;
 
+  /* decorated */
   &--decorated::before {
     content: '';
     width: $badge--decorated-size;
     height: $badge--decorated-size;
     margin-right: $badge--decorated-gap;
     border-radius: $badge--decorated-border-radius;
-    background-color: $badge--decorated-background-color;
+  }
+
+  /* variant */
+  &--primary {
+    color: $badge--primary-color;
+    background-color: $badge--primary-background-color;
+
+    &--decorated::before {
+      background-color: $badge--primary--decorated-background-color;
+    }
+  }
+
+  &--secondary {
+    color: $badge--secondary-color;
+    background-color: $badge--secondary-background-color;
+
+    &--decorated::before {
+      background-color: $badge--secondary--decorated-background-color;
+    }
+  }
+
+  &--danger {
+    color: $badge--danger-color;
+    background-color: $badge--danger-background-color;
+
+    &--decorated::before {
+      background-color: $badge--danger--decorated-background-color;
+    }
   }
 }

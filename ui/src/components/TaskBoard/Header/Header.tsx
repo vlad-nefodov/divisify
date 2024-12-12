@@ -1,8 +1,7 @@
 import { ComponentPropsWithoutRef, FC } from 'react';
-import { faClockRotateLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { History, Plus } from 'lucide-react';
 
-import Button from '../../ui/Button/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button } from '@/components/ui/Button';
 import styles from './Header.module.scss';
 
 export interface HeaderProps extends ComponentPropsWithoutRef<'div'> {
@@ -14,13 +13,12 @@ const Header: FC<HeaderProps> = ({ title }) => {
     <div className={styles.header}>
       <div className={styles['header__title']}>{title}</div>
       <div className={styles['header__buttons']}>
-        <Button disabled variant='outline-secondary'>
-          <FontAwesomeIcon icon={faClockRotateLeft} />
+        <Button disabled variant='secondary'>
           History
+          <History />
         </Button>
         <Button disabled variant='primary'>
-          <FontAwesomeIcon icon={faPlus} />
-          Create new list
+          Create <Plus />
         </Button>
       </div>
     </div>

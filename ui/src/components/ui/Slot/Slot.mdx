@@ -1,0 +1,67 @@
+import { Meta, Source } from '@storybook/blocks';
+
+<Meta title='Utils/Slot' />
+
+# Slot
+
+Merges its props onto its immediate child.
+
+### Anatomy
+
+{/* prettier-ignore-start */}
+
+<Source
+  dark
+  code={`
+import { Slot } from "@/components/ui/Slot";
+import { Button } from "@/components/ui/Button";
+
+<Slot>
+  <Button>Child</Button>
+</Slot>
+`} />
+
+{/* prettier-ignore-end */}
+
+## Basic example
+
+Use to create your own asChild API.
+
+{/* prettier-ignore-start */}
+
+<Source 
+  dark 
+  code={`
+import { FC } from 'react';
+import { Slot } from "@/components/ui/Slot";
+
+interface ButtonProps {
+  asChild?: boolean;
+  children?: React.ReactNode;
+}
+
+const Button: FC<ButtonProps> = ({ asChild, children, ...props }) => {
+  const Comp = asChild ? Slot : "button";
+  return <Comp {...props}>{children}</Comp>;
+};
+
+export default Button;
+`} />
+
+{/* prettier-ignore-end */}
+
+### Usage
+
+{/* prettier-ignore-start */}
+
+<Source
+  dark
+  code={`
+import { Button } from "path/to/custom/Button";
+
+<Button asChild>
+  <a href='/home'>Home</a>
+</Button>
+`} />
+
+{/* prettier-ignore-end */}

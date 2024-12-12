@@ -1,31 +1,62 @@
-import { ComponentPropsWithoutRef, FC } from 'react';
+import { ComponentPropsWithoutRef, forwardRef } from 'react';
 
+import { Slot } from '../Slot';
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 
-export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
-  variant?: 'primary' | 'outline-secondary' | 'dashed-secondary';
-  size?: 'lg';
+interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
+  variant?:
+    | 'primary'
+    | 'primary-outline'
+    | 'primary-dashed'
+    | 'secondary'
+    | 'secondary-outline'
+    | 'secondary-dashed'
+    | 'danger'
+    | 'danger-outline'
+    | 'danger-dashed'
+    | 'ghost'
+    | 'link';
+  size?: 'sm' | 'md' | 'lg';
+  isIcon?: boolean;
+  asChild?: boolean;
 }
 
 const cx = classNames.bind(styles);
 
-const Button: FC<ButtonProps> = (props) => {
-  const { variant, size, className, children, ...rest } = props;
-  const styleNames = cx(
-    'btn',
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
     {
-      [`btn--${variant}`]: variant,
-      [`btn--${size}`]: size
+      variant = 'primary',
+      size = 'md',
+      isIcon = false,
+      asChild = false,
+      className,
+      children,
+      ...rest
     },
-    className
-  );
+    forwardedRef
+  ) => {
+    const Comp = asChild ? Slot : 'button';
+    const styleNames = cx(
+      'btn',
+      `btn--${variant}`,
+      `btn--${size}`,
+      {
+        'btn--icon': isIcon,
+        'btn--disabled': rest.disabled,
+        [`btn--${variant}--disabled`]: rest.disabled
+      },
+      className
+    );
 
-  return (
-    <button className={styleNames} {...rest}>
-      {children}
-    </button>
-  );
-};
+    return (
+      <Comp className={styleNames} ref={forwardedRef} {...rest}>
+        {children}
+      </Comp>
+    );
+  }
+);
 
-export default Button;
+Button.displayName = 'Button';
+export { Button, type ButtonProps };

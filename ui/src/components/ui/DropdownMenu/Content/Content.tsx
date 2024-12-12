@@ -9,19 +9,28 @@ export interface ContentExtensions {
   Item: typeof Item;
 }
 export interface ContentProps extends ComponentPropsWithoutRef<'div'> {
-  align?: 'left' | 'center' | 'right';
+  placementX?: 'left' | 'middle' | 'right';
+  placementY?: 'top' | 'bottom';
 }
 
 const cx = classNames.bind(styles);
 
 const Content: FC<ContentProps> & ContentExtensions = (props) => {
-  const { align, className, children, ...rest } = props;
+  const {
+    placementX = 'right',
+    placementY = 'bottom',
+    className,
+    children,
+    ...rest
+  } = props;
 
   const { isOpen } = useDropdownMenuContext();
 
   const styleNames = cx(
     'content',
-    { 'content--visible': isOpen, [`content--${align}`]: align },
+    [`content-placement-x-${placementX}`],
+    [`content-placement-y-${placementY}`],
+    { 'content--visible': isOpen },
     className
   );
 

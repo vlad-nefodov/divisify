@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, FC } from 'react';
 
-import TaskCard from '../../../../TaskCard/TaskCard';
-import { TaskList } from '../../../../../services/state/slices/types';
+import TaskCard from '@/components/TaskCard/TaskCard';
+import { TaskList } from '@/services/state/slices/types';
 import styles from './Body.module.scss';
 
 export interface BodyProps extends ComponentPropsWithoutRef<'div'> {

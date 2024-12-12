@@ -1,13 +1,9 @@
+import { CalendarDays, ChevronDown } from 'lucide-react';
 import { ComponentPropsWithoutRef, FC } from 'react';
-import {
-  faCalendarDays,
-  faChevronDown
-} from '@fortawesome/free-solid-svg-icons';
 
-import Badge from '../../ui/Badge/Badge';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Select from '../../ui/Select/Select';
-import { SelectValue } from '../../ui/Select/Select.types';
+import { Badge } from '@/components/ui/Badge';
+import Select from '@/components/ui/Select/Select';
+import { SelectValue } from '@/components/ui/Select/Select.types';
 import { format } from 'date-fns';
 import styles from './Body.module.scss';
 
@@ -44,17 +40,17 @@ const Body: FC<BodyProps> = (props) => {
     <div className={styles.body}>
       <div className={styles['body__description']}>{description}</div>
       <div className={styles['body__date']}>
-        <FontAwesomeIcon icon={faCalendarDays} />
+        <CalendarDays />
         {format(dueDate, 'E, d MMM')}
       </div>
-      <Badge className={styles['body__priority']} decorated>
+      <Badge className={styles['body__priority']} variant='secondary' decorated>
         {priority}
       </Badge>
       <Select onValueChange={onChangeListHandler}>
         <Select.Trigger>
           <Select.Trigger.Value placeholder='Move to...' />
           <Select.Trigger.Icon>
-            <FontAwesomeIcon icon={faChevronDown} />
+            <ChevronDown />
           </Select.Trigger.Icon>
         </Select.Trigger>
         <Select.Content>{getListSelectItems()}</Select.Content>

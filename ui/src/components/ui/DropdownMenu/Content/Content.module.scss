@@ -1,4 +1,4 @@
-@use '../../tokens' as *;
+@use '@/components/ui/styles' as *;
 
 .content {
   opacity: 0;
@@ -8,7 +8,6 @@
   visibility: hidden;
   -webkit-user-select: none;
   z-index: $dropdown-menu-content-z-index;
-  top: calc(100% + $dropdown-menu-content-offset-y);
   border-radius: $dropdown-menu-content-border-radius;
   background-color: $dropdown-menu-content-background-color;
   padding: $dropdown-menu-content-padding-y $dropdown-menu-content-padding-x;
@@ -23,15 +22,25 @@
     visibility: visible;
   }
 
-  /* Align */
-  &--left {
-    left: 0;
-  }
-  &--center {
-    right: 50%;
-    transform: translateX(50%);
-  }
-  &--right {
-    right: 0;
+  &-placement {
+    /* Placement X */
+    &-x-left {
+      right: 0;
+    }
+    &-x-middle {
+      right: 50%;
+      transform: translateX(50%);
+    }
+    &-x-right {
+      left: 0;
+    }
+
+    /* Placement Y */
+    &-y-top {
+      bottom: calc(100% + $dropdown-menu-content-offset-y);
+    }
+    &-y-bottom {
+      top: calc(100% + $dropdown-menu-content-offset-y);
+    }
   }
 }

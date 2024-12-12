@@ -1,21 +1,47 @@
-import { ComponentPropsWithoutRef, FC } from 'react';
+import { ComponentPropsWithoutRef, forwardRef } from 'react';
 
 import classNames from 'classnames/bind';
 import styles from './Badge.module.scss';
+import { Slot } from '../Slot';
 
-export interface BadgeProps extends ComponentPropsWithoutRef<'span'> {
+interface BadgeProps extends ComponentPropsWithoutRef<'span'> {
+  variant?: 'primary' | 'secondary' | 'danger';
   decorated?: boolean;
+  asChild?: boolean;
 }
 
 const cx = classNames.bind(styles);
 
-const Badge: FC<BadgeProps> = ({ decorated, className, children, ...rest }) => {
-  const styleNames = cx('badge', { 'badge--decorated': decorated }, className);
-  return (
-    <span className={styleNames} {...rest}>
-      {children}
-    </span>
-  );
-};
+const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
+  (
+    {
+      variant = 'primary',
+      decorated,
+      asChild = false,
+      className,
+      children,
+      ...rest
+    },
+    forwardedRef
+  ) => {
+    const Comp = asChild ? Slot : 'span';
+    const styleNames = cx(
+      'badge',
+      `badge--${variant}`,
+      {
+        'badge--decorated': decorated,
+        [`badge--${variant}--decorated`]: decorated
+      },
+      className
+    );
 
-export default Badge;
+    return (
+      <Comp className={styleNames} ref={forwardedRef} {...rest}>
+        {children}
+      </Comp>
+    );
+  }
+);
+
+Badge.displayName = 'Badge';
+export { Badge, type BadgeProps };

@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef, FC } from 'react';
 
+import { Slot } from '@/components/ui/Slot';
 import classNames from 'classnames/bind';
 import styles from './Icon.module.scss';
 import { useSelectContext } from '../../SelectContext';
@@ -16,9 +17,9 @@ const Icon: FC<IconProps> = (props) => {
   const styleNames = cx('icon', { 'icon--active': isOpen }, className);
 
   return (
-    <div className={styleNames} {...rest}>
+    <Slot className={styleNames} {...rest}>
       {children}
-    </div>
+    </Slot>
   );
 };
 

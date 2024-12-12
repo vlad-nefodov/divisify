@@ -1,0 +1,11 @@
+@use '@/components/ui/styles' as *;
+
+.tooltip-content {
+  color: $tooltip-content-color;
+  font-size: $tooltip-content-font-size;
+  font-weight: $tooltip-content-font-weight;
+  border-radius: $tooltip-content-border-radius;
+  background-color: $tooltip-content-background-color;
+  padding: $tooltip-content-padding-y $tooltip-content-padding-x;
+  border: $tooltip-content-border-width $tooltip-content-border-color solid;
+}

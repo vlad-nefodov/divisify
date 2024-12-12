@@ -1,0 +1,21 @@
+// Default Lucide values https://lucide.dev/guide/advanced/global-styling
+$default-icon-size: 24;
+$default-icon-stroke-width: 2;
+$default-icon-color: currentColor;
+
+// Requires attribute checking to allow overriding
+// of these properties in icon components
+svg.lucide {
+  &[width='#{$default-icon-size}'][height='#{$default-icon-size}'] {
+    width: 1em;
+    height: 1em;
+  }
+
+  &[stroke-width='#{$default-icon-stroke-width}'] {
+    stroke-width: 0.2em;
+  }
+
+  &[stroke='#{$default-icon-color}'] {
+    color: currentColor;
+  }
+}

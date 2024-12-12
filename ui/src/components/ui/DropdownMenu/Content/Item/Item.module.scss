@@ -1,11 +1,11 @@
-@use '../../../tokens' as *;
+@use '@/components/ui/styles' as *;
 
 .item {
   width: 100%;
   border: none;
   display: flex;
   cursor: pointer;
-  align-items: center;
+  align-items: flex-start;
   gap: $dropdown-menu-content-item-gap;
   color: $dropdown-menu-content-item-color;
   background-color: $dropdown-menu-content-item-background-color;
